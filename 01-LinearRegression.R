@@ -46,8 +46,14 @@ vif(lm.fit3)
 lm.fit4 =lm(medv ~ . - rad - tax, dataset)
 summary(lm.fit4)
 
+lm.fit4 =lm(medv ~ . - age - indus - rad - tax, dataset)
+summary(lm.fit4)
+
 #8 Interaction Terms
 lm(formula = medv ~ lstat * age , dataset)
+
+#9 regression with polynomial terms
+polyregression = lm(formula = medv ~ poly(lstat,4), dataset)
 
 #9 how to use the model to predict 
 teste = subset(dataset, rad < 2)
