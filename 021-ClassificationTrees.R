@@ -48,11 +48,11 @@ cv.carseats
 
 #discover the number of nodes that minimizes the error - check at the minimum dev and correspondent size
 
-#apply the limit of nodes
+#apply the limit by size
 prune.carseats = prune.misclass(tree.carseats, best = 9)
 plot(prune.carseats)
 text(prune.carseats, pretty = 0)
 
 tree.pred=predict(prune.carseats, Carseats.test ,type="class")
-table(tree.pred ,High.test)
+table(tree.pred, High.test)
 success_rate_prunning = (94+60)/(94+60+22+24)
